@@ -1,0 +1,12 @@
+<ion-content padding class="bg-grey">
+  <div class="">
+    <div col-12 class="logo" >TTG</div>
+    <form class="" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+      <ion-item style=" padding-left: 0" class="bg-grey">
+        <ion-input type="text" formControlName="email" placeholder="Email" [(ngModel)]="email"  aria-required="true"></ion-input>
+      </ion-item>
+
+        <button type="submit" [disabled]="!loginForm.valid" ion-button full class="custom-btn" style="margin-top: 20px;">NEXT</button>
+    </form>
+  </div>
+</ion-content>

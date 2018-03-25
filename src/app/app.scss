@@ -1,0 +1,221 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
+
+ion-menu{
+
+  .gradientbg{
+    background: $app-color-secondary; /* Old browsers */
+    background: -moz-linear-gradient(left, $app-color-main 0%, $app-color-main 40%, $app-color-main 62%, $app-color-main 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, $app-color-main 0%, $app-color-main 40%, $app-color-main 62%, $app-color-main 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(left, $app-color-main 0%, $app-color-main 40%, $app-color-main 62%, $app-color-main 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#844bfb', endColorstr='#6f2dc1',GradientType=1 ); /* IE6-9 */
+  }
+  .avatar {
+
+
+    height: 50px;
+    width: 50px;
+
+    float: left;
+    margin: 1em;
+    position: relative;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    box-shadow: none;
+  }
+}
+
+.list-ios .item-block .item-inner{
+  border-bottom: 0;
+}
+.list-md .item-block .item-inner{
+  border-bottom: 0;
+}
+.toolbar-background{
+  background: $app-color-main;
+  color: #ffffff;
+}
+.segment-ios{background: #ffffff}
+.segment-md{ background: #ffffff }
+
+.bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default, .toolbar-title-ios, .bar-button-default-md, .bar-button-default.bar-button-md-default, .bar-button-clear-md-default, .toolbar-title-md {
+  color: #ffffff;
+}
+.item-ios ion-icon {
+  &[item-left], &[item-right], &[item-start], &[item-end] {
+    color: $app-color-main;
+  }
+}
+
+.item-md ion-icon {
+  &[item-left], &[item-right], &[item-start], &[item-end] {
+    color: $app-color-main;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p, span, body {
+  color: $app-color-main;
+}
+.custom-btn{
+  height: 3.2em;
+  background: $app-color-main;
+  text-transform: uppercase
+}
+.button-inner{
+  color:#ffffff;
+}
+.segment-ios .segment-button.segment-activated{
+  background: $app-color-main;
+  border-color: $app-color-main;
+}
+.segment-ios .segment-button{
+  border-color: $app-color-main;
+  color: $app-color-main;
+}
+.segment-md .segment-button {
+  &.activated, &.segment-activated {
+    border-color: $app-color-secondary;
+  }
+}
+.segment-md .segment-button{
+  color:$app-color-main;
+}
+.badge-md,.badge-ios{
+  background-color: $app-color-main;
+}
+.button-md,.button-ios{
+  background-color: $app-color-main;
+  color: #ffffff;
+}
+.button-md.activated,.button-ios.activated{
+  background-color: $app-color-main;
+  color: #ffffff;
+}
+.button-md:hover:not(.disable-hover),.button-ios:hover:not(.disable-hover){
+  background:$app-color-main;
+}
+.alert-md .alert-button .button-inner,.alert-ios .alert-button .button-inner{
+  color:$app-color-main;
+}
+
+.tabs-md .tab-button,.tabs--ios .tab-button{
+  background: #f8f8f8;
+}
+.tabs-md .tab-button[aria-selected=true],.tabs-ios .tab-button[aria-selected=true]{
+  color: #ffffff;
+  background: $app-color-main;
+}
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon, .tabs-ios .tab-button[aria-selected=true] .tab-button-icon {
+  color: #ffffff;
+}
+.sbih{
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+  color: white;
+  margin-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bg-grey{background-color:#4d4d4d;color: #ffffff }
+.color-grey{color:$app-color-main;}
+.logo{ padding:35px 0; text-align: center;display: block;font-size: 72px;font-weight: 800;color: #ffffff }
+.item-md.item-block .item-inner,.item-ios.item-block .item-inner{
+  border-bottom: 0;
+}
+
+
+.datetime-ios {
+  padding: 0 0 0 0;
+}
+
+.datetime-md {
+    padding: 0 0 0 0;
+}
+
+.button-font-size {
+  font-size: 2.00em;
+}
+
+.app-color {
+  color:$app-color-main !important;
+}
+
+.app-color-background-color {
+  background-color:$app-color-main !important;
+}
+
+.app-color-background-color-secondary {
+  background-color:$app-color-secondary !important;
+}
+
+.app-color-background {
+  background:$app-color-main !important;
+}
+
+.app-color-secondary {
+  color: $app-color-secondary !important;
+}
+
+.font-weight{
+  font-weight: bold;
+}
+
+//Desktop App styles
+
+@media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+{
+
+  .desktop-sidebar-main ion-row .item{
+    background: $app-color-main;
+    color: #ffffff;
+    border: 0;
+  }
+
+  .desktop-sidebar-main ion-row .item .item-inner{
+    margin-left:5px;
+  }
+
+  .desktop-sidebar-main ion-row .item ion-icon{
+    color:#ffffff;
+  }
+
+  .split-pane-side{
+    max-width: 20%;
+  }
+
+  .split-pane.split-pane-visible > .split-pane-side{
+    max-width: 20%;
+  }
+
+  .noBg::after{
+    background: none !important;
+    }
+
+}
+
+
+

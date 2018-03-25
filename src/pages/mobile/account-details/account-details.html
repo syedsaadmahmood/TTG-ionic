@@ -1,0 +1,170 @@
+<!--
+  Generated template for the AccountDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Account Details</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+      <ion-segment [(ngModel)]="accountSegment" (ionChange)="tabChangeDetect()">
+        <ion-segment-button value="general" activated>
+          GENERAL
+        </ion-segment-button>
+        <ion-segment-button value="financial">
+          FINANCIAL
+        </ion-segment-button>
+      </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+   <div [ngSwitch]="accountSegment">
+     <div *ngSwitchCase="'general'">
+       <ion-list style="padding-top: 16px" class="margin">
+         <ion-list-header class="list-heading row-padding">
+           <strong class="app-color">CONTACT INFO</strong>
+         </ion-list-header>
+
+         <ion-row class="app-color-secondary border-bottom">
+           <div ion-item class="row-padding">
+             <ion-input placeholder="Name" [(ngModel)]="name" class="app-color"></ion-input>
+           </div>
+         </ion-row>
+
+        <ion-row class="app-color-secondary border-bottom">
+          <div ion-item class="row-padding">
+            <ion-input type="number" placeholder="Number" [(ngModel)]="number" class="app-color"></ion-input>
+          </div>
+        </ion-row>
+
+        <ion-row class="app-color-secondary border-bottom">
+          <div ion-item class="row-padding">
+            <ion-input type="email" placeholder="email" [(ngModel)]="email" class="app-color"></ion-input>
+          </div>
+        </ion-row>
+
+       </ion-list>
+
+       <ion-list style="padding-top: 16px" class="margin">
+         <ion-list-header class="list-heading row-padding">
+           <strong class="app-color">BILLING CONTACT</strong>
+         </ion-list-header>
+
+         <ion-row>
+           <ion-item class="row-padding border-select app-color">
+             <!--<ion-label>Contact</ion-label>-->
+             <ion-select [(ngModel)]="contact">
+               <ion-option value="Norman">Norman Sally</ion-option>
+               <ion-option value="John">John Wick</ion-option>
+             </ion-select>
+           </ion-item>
+         </ion-row>
+
+       </ion-list>
+
+
+      <ion-list style="padding-top: 16px" class="margin">
+        <ion-list-header class="list-heading row-padding">
+          <strong class="app-color">ADDRESS</strong>
+        </ion-list-header>
+        <ion-row class="app-color-secondary border-bottom">
+          <div ion-item class="row-padding">
+            <ion-input placeholder="Street Address" [(ngModel)]="street1" class="app-color"></ion-input>
+          </div>
+        </ion-row>
+
+        <ion-row class="app-color-secondary border-bottom">
+          <div ion-item class="row-padding">
+            <ion-input [(ngModel)]="street2" class="app-color"></ion-input>
+          </div>
+        </ion-row>
+
+        <ion-row class="app-color-secondary">
+          <div col-6 style="padding-left: 0">
+            <div ion-item class="row-padding border-bottom app-color-secondary">
+            <ion-input placeholder="City/Town" [(ngModel)]="city" class="app-color"></ion-input>
+            </div>
+          </div>
+
+          <div col-6>
+            <div ion-item class="row-padding border-bottom app-color-secondary">
+            <ion-input placeholder="State/Prov" [(ngModel)]="state" class="app-color"></ion-input>
+            </div>
+          </div>
+        </ion-row>
+
+        <ion-row class="app-color-secondary border-bottom">
+          <div ion-item class="row-padding">
+            <ion-input placeholder="Country" [(ngModel)]="country" class="app-color"></ion-input>
+          </div>
+        </ion-row>
+
+      </ion-list>
+
+       <div class="padding">
+         <button ion-button full (click)="updateInfo()">UPDATE INFO</button>
+       </div>
+
+     </div>
+
+     <div *ngSwitchCase="'financial'">
+
+       <p class="padding">
+         We use <span><strong>Intuit</strong></span> for secure billing & payments. TTG does not store or keep sensitive financial info on our servers!
+       </p>
+
+        <ion-list style="padding-top: 16px" class="margin">
+        <ion-list-header class="list-heading row-padding">
+          <strong class="app-color">CREDIT CARD</strong>
+        </ion-list-header>
+        <ion-row class="app-color-secondary border-bottom">
+          <div ion-item class="row-padding">
+            <ion-input placeholder="Full Name" [(ngModel)]="fullName" class="app-color" (keyup)="checkDisabling()"></ion-input>
+          </div>
+        </ion-row>
+
+        <ion-row class="app-color-secondary border-bottom">
+          <div ion-item class="row-padding">
+            <ion-input type="number" placeholder="Card Number" [(ngModel)]="cardNumber" class="app-color" (keyup)="checkDisabling()"></ion-input>
+          </div>
+        </ion-row>
+
+        <ion-row class="app-color-secondary">
+          <div col-6 style="padding-left: 0">
+            <div ion-item class="row-padding border-bottom app-color-secondary">
+              <ion-datetime class="app-color" placeholder="Expiry" displayFormat="DD/YY" min="2018" max="2030" [(ngModel)]="expiry" (ionChange)="checkDisabling()"></ion-datetime>
+            </div>
+          </div>
+
+          <div col-6>
+            <div ion-item class="row-padding border-bottom app-color-secondary">
+            <ion-input type="number" placeholder="CVV" [(ngModel)]="cvv" class="app-color" (keyup)="checkDisabling()"></ion-input>
+            </div>
+          </div>
+        </ion-row>
+
+        <ion-row class="app-color-secondary border-bottom">
+          <div ion-item class="row-padding">
+            <ion-input type="number" placeholder="Zip Code" [(ngModel)]="zipCode" class="app-color" (keyup)="checkDisabling()"></ion-input>
+          </div>
+        </ion-row>
+
+      </ion-list>
+
+       <div class="padding button-position" style="bottom: 30px;">
+         <button ion-button full [disabled]="disabling">CARD IS VALID</button>
+       </div>
+
+     </div>
+
+   </div>
+
+</ion-content>

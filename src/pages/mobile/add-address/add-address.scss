@@ -1,0 +1,28 @@
+page-add-address {
+
+  .address-input {
+    padding:5px 15px;
+    width:100%;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .customIcon {
+    font-size: 2.00em
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #FFFFFF;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #FFFFFF;
+  }
+
+  :-ms-input-placeholder { /* Microsoft Edge */
+    color: #FFFFFF;
+  }
+
+}

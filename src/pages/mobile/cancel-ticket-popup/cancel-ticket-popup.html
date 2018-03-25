@@ -1,0 +1,38 @@
+<!--
+  Generated template for the CancelTicketPopupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title class="popup-title">CANCEL THIS REQUEST?</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <p style="text-align: center; padding-top: 16px" class="padding">
+    Your tech is enroute already. Are you sure you still want to cancel your request?
+  </p>
+
+  <div class="text-area-div app-color-secondary margin">
+    <ion-textarea class="padding app-color" [(ngModel)]="credentialText" style="height: 100%" placeholder="Add a cancellation message..."></ion-textarea>
+  </div>
+
+  <ion-row class="padding">
+    <div ion-item class="row-padding">
+        <ion-icon item-start name="warning" style="font-size: 20px"></ion-icon>
+        <ion-label style="font-size: 9px">LAST MIN CANCELS INCUR A $50 JERK-FEE!</ion-label>
+    </div>
+  </ion-row>
+
+  <div class="button-position-bottom">
+    <div class="atpo-cancel-ticket-popup app-color-secondary"><p (click)="keepItOption()">KEEP IT</p></div>
+    <div class="atpo-cancel-ticket-popup app-color-secondary" style="border-left: 0 "><p (click)="cancelItOption()">CANCEL IT</p></div>
+  </div>
+
+</ion-content>

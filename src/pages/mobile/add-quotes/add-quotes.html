@@ -1,0 +1,82 @@
+<!--
+  Generated template for the AddQuotesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New Quote</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-row class="border-bottom app-color margin-top app-color-secondary" (click)="addCustomer()">
+      <div ion-item class="row-padding">
+        <ion-icon item-start name="person" ></ion-icon>
+        <ion-label class="ion-label-overflow app-color-secondary" *ngIf="customerName==''">Add Customer Name</ion-label>
+        <ion-label class="ion-label-overflow" *ngIf="customerName!=''">{{customerName}}</ion-label>
+      </div>
+    </ion-row>
+
+    <ion-row class="border-bottom app-color margin-top app-color-secondary">
+      <div ion-item class="row-padding">
+        <ion-icon item-start name="clipboard" ></ion-icon>
+        <ion-input placeholder="Title: Quote #42032" [(ngModel)]="title" (keyup)="checkDisabling()" class="app-color"></ion-input>
+      </div>
+    </ion-row>
+
+    <div [ngSwitch]="quoteSegment">
+      <div *ngSwitchCase="'fixed'">
+
+        <ion-row class="border-bottom app-color margin-top app-color-secondary">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="cash" ></ion-icon>
+            <ion-input type="number" placeholder="Monthly Cap" [(ngModel)]="monthyCap" class="app-color"></ion-input>
+          </div>
+        </ion-row>
+
+      </div>
+    </div>
+
+    <ion-segment [(ngModel)]="quoteSegment" (ionChange)="tabChangeDetect()" style="padding-top: 20px">
+      <ion-segment-button value="hourly" activated>
+        HOURLY
+      </ion-segment-button>
+      <ion-segment-button value="fixed">
+        FIXED
+      </ion-segment-button>
+    </ion-segment>
+
+    <div style="padding-top: 10px" *ngIf="searchItem!=undefined">
+        <ion-row *ngFor="let item of searchItem; let i = index">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="close" class="button-font-size" (click)="removeClicked(i)"></ion-icon>
+            <strong class="app-color"> {{item.service.name}}</strong>
+            <ion-icon item-end style="font-size: 22px">${{item.ratePerHour}} /hr</ion-icon>
+          </div>
+        </ion-row>
+      </div>
+
+
+    <div style="padding-top: 10px">
+      <button ion-button full (click)="addService()" >+ ADD NEW SERVICE</button>
+    </div>
+
+  </ion-list>
+
+  <div ion-item class="row-padding">
+    <ion-textarea placeholder="Add some notes..." [(ngModel)]="note" (keyup)="checkDisabling()"> class="app-color"</ion-textarea>
+  </div>
+
+  <div style="padding-top: 5em">
+    <button ion-button full (click)="naivigateToPopup()" [disabled]="disabling">SAVE & SEND QUOTE</button>
+  </div>
+
+
+</ion-content>

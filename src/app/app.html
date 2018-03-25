@@ -1,0 +1,198 @@
+<ion-split-pane *ngIf="platform == 'mobile'">
+<ion-menu  *ngIf="authenticated==true" [content]="content">
+  <ion-header>
+    <ion-row class="gradientbg" style="padding-top: 25px">
+      <ion-col col-3 (click)="navigateProfilePage()">
+        <img class="avatar" [src]="userDp"/>
+      </ion-col>
+
+      <ion-col col-6 style="margin: auto;" (click)="navigateProfilePage()">
+        <h4 class="sbih">{{userName}} <br /> <small>{{companyName}}</small></h4>
+      </ion-col>
+
+      <ion-col col-3 style="margin: auto;">
+        <ion-item style="color: #ffffff" class="app-color-background-color" (click)="settingsButton()">
+          <ion-icon name="settings"></ion-icon>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-header>
+  <ion-content>
+    <ion-list no-lines>
+      <ion-row>
+        <div ion-item>
+          <ion-icon item-start name="star" ></ion-icon>
+          <ion-label> Prefer Favorites</ion-label>
+          <ion-toggle color="energized" item-end></ion-toggle>
+        </div>
+      </ion-row>
+
+      <ion-row>
+        <div ion-item>
+          <ion-icon item-start name="heart" ></ion-icon>
+          <ion-label> Remote Opt-in</ion-label>
+          <ion-toggle color="royal" item-end></ion-toggle>
+        </div>
+      </ion-row>
+    </ion-list>
+
+    <ion-list no-lines>
+      <ion-list-header>
+        COMMUNICATION
+      </ion-list-header>
+      <ion-row>
+        <div ion-item>
+          <ion-icon name="chatbubbles" item-start></ion-icon>
+          Messages
+          <ion-badge item-end>3</ion-badge>
+        </div>
+      </ion-row>
+    </ion-list>
+
+    <ion-list no-lines>
+      <ion-list-header>
+        TTG SERVICES
+      </ion-list-header>
+      <ion-row>
+        <div ion-item>
+          <ion-icon name="help" item-start></ion-icon>
+          Support/Report Issue
+        </div>
+      </ion-row>
+
+      <ion-row>
+        <div ion-item>
+          <ion-icon name="warning" item-start></ion-icon>
+          Service Status
+        </div>
+      </ion-row>
+
+    </ion-list>
+
+
+  </ion-content>
+</ion-menu>
+
+<ion-nav   id="nav" #content [root]="rootPage" swipeBackEnabled="false" main></ion-nav>
+</ion-split-pane>
+
+
+
+
+<ion-split-pane *ngIf="platform == 'desktop'">
+<ion-menu  *ngIf="authenticated==true" [content]="content">
+  <ion-header class="noBg">
+    <ion-row class="gradientbg" style="padding-top: 25px;padding-left: 15px; ">
+      <ion-col col-12>
+        <h1 style="color: #ffffff;margin-top: 0">TTG</h1>
+      </ion-col>
+    </ion-row>
+  </ion-header>
+  <ion-content class="desktop-sidebar-main app-color-background">
+    <ion-row (click)="overviewPage('Overview')">
+      <div ion-item *ngIf="selectedPage=='Overview'">
+        <ion-icon name="globe" item-start></ion-icon>
+        Overview
+      </div>
+
+      <div ion-item class="app-color-secondary" *ngIf="selectedPage!='Overview'">
+        <ion-icon class="app-color-secondary" name="globe" item-start></ion-icon>
+        Overview
+      </div>
+
+      </ion-row>
+    <ion-row (click)="requestPage('Requests')">
+      <div ion-item *ngIf="selectedPage=='Requests'">
+        <ion-icon name="call" item-start></ion-icon>
+        Requests
+      </div>
+
+      <div ion-item class="app-color-secondary" *ngIf="selectedPage!='Requests'">
+        <ion-icon class="app-color-secondary" name="call" item-start></ion-icon>
+        Requests
+      </div>
+    </ion-row>
+    <ion-row (click)="invoicesPage('Invoices')">
+      <div ion-item *ngIf="selectedPage=='Invoices'">
+        <ion-icon name="podium" item-start></ion-icon>
+        Invoices
+      </div>
+
+      <div ion-item class="app-color-secondary" *ngIf="selectedPage!='Invoices'">
+        <ion-icon class="app-color-secondary" name="podium" item-start></ion-icon>
+        Invoices
+      </div>
+    </ion-row>
+    <ion-row (click)="quotesPage('Quotes')">
+      <div ion-item *ngIf="selectedPage=='Quotes'">
+        <ion-icon name="paper" item-start></ion-icon>
+        Quotes
+      </div>
+
+      <div ion-item class="app-color-secondary" *ngIf="selectedPage!='Quotes'">
+        <ion-icon class="app-color-secondary" name="paper" item-start></ion-icon>
+        Quotes
+      </div>
+    </ion-row>
+    <ion-row (click)="usersPage('Users')">
+      <div ion-item *ngIf="selectedPage=='Users'">
+        <ion-icon name="people" item-start></ion-icon>
+        Manage Users
+      </div>
+
+      <div ion-item class="app-color-secondary" *ngIf="selectedPage!='Users'">
+        <ion-icon class="app-color-secondary" name="people" item-start></ion-icon>
+        Manage Users
+      </div>
+    </ion-row>
+
+    <ion-row>
+      <div ion-item>
+      </div>
+    </ion-row>
+
+    <ion-row>
+        <div ion-item class="app-color-secondary">
+          <ion-icon class="app-color-secondary" name="chatboxes" item-start></ion-icon>
+          Messages
+        </div>
+    </ion-row>
+
+    <ion-row>
+       <div ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+       <div ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+       <div ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+       <div ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+       <div ion-item>
+      </div>
+    </ion-row>
+    <ion-row>
+       <div ion-item>
+      </div>
+    </ion-row>
+
+    <ion-row>
+        <div ion-item>
+          <ion-icon name="contact" item-start style="font-size: 2.5em"></ion-icon>
+          {{userName}}<br /> <small>{{companyName}}</small>
+          <ion-icon name="settings" item-end (click)="settingsPage()"></ion-icon>
+        </div>
+    </ion-row>
+
+  </ion-content>
+</ion-menu>
+
+<ion-nav   id="nav1" #content [root]="rootPage" swipeBackEnabled="false" main></ion-nav>
+</ion-split-pane>

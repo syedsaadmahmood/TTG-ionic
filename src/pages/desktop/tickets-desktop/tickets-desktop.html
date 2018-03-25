@@ -1,0 +1,183 @@
+<!--
+  Generated template for the TicketsDesktopPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header padding>
+
+  <!--<ion-navbar>-->
+    <!--<ion-title>tickets-desktop</ion-title>-->
+  <!--</ion-navbar>-->
+
+  <div class = "row">
+    <div col-3>
+      <h4>
+        Assembly Co. <br /> <small>Vancouver Location</small>
+      </h4>
+    </div>
+
+    <div col-3>
+
+    </div>
+
+    <div col-4>
+      <ion-searchbar></ion-searchbar>
+
+    </div>
+
+    <div col-2>
+      <ion-buttons right>
+        <button ion-button icon-only><ion-icon name="list-box"></ion-icon></button>
+        <button ion-button icon-only><ion-icon name="calendar"></ion-icon></button>
+        <button ion-button icon-only (click)="addTicketPage()"><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
+    </div>
+
+  </div>
+
+
+
+
+</ion-header>
+
+
+<ion-content padding>
+
+   <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class = "row">
+
+    <div col-3>
+      <ion-card>
+        <ion-card-header>
+          <h3 class="app-color">On the Way</h3>
+        </ion-card-header>
+
+        <ion-list >
+        <ion-item-group *ngFor="let ticket of onWayData; let i = index" >
+
+          <ion-item-sliding>
+
+            <div ion-item (click)="navigationToTicketDetail(ticket.id)">
+              <ion-avatar item-start>
+              <img [src]=userDp>
+              </ion-avatar>
+              <div>
+              <h2>{{ticket.name}}</h2>
+              </div>
+              <p >
+                {{ticket.status}}
+              </p>
+              <ion-badge item-end>{{ticket.onSite}}</ion-badge>
+            </div>
+
+            <!--<ion-item-options>-->
+              <!--<button ion-button color="favorite">-->
+                <!--Favorite-->
+              <!--</button>-->
+            <!--</ion-item-options>-->
+
+          </ion-item-sliding>
+
+        </ion-item-group>
+    </ion-list>
+
+      </ion-card>
+    </div>
+
+    <div col-3>
+      <ion-card>
+        <ion-card-header>
+          <h3 class="app-color">Requested</h3>
+        </ion-card-header>
+
+         <ion-list>
+        <ion-item-group *ngFor="let req of requestedData; let i = index">
+
+          <ion-item-sliding>
+
+            <div ion-item (click)="navigationToTicketDetail(req.id)">
+              <ion-avatar item-start>
+                <img [src]=userDp>
+              </ion-avatar>
+              <h2>{{req.name}}</h2>
+              <p>
+                Request {{req.date}}
+              </p>
+              <ion-badge *ngIf="req.onSite=='on-site' || req.onSite=='OnSite' || req.onSite=='Remote'" item-end>{{req.onSite}}</ion-badge>
+            </div>
+          </ion-item-sliding>
+
+        </ion-item-group>
+
+      </ion-list>
+
+      </ion-card>
+    </div>
+
+    <div col-3>
+      <ion-card>
+        <ion-card-header>
+          <h3 class="app-color">Scheduled</h3>
+        </ion-card-header>
+
+        <ion-list>
+
+        <ion-item-group *ngFor="let schedule of scheduleData; let i = index">
+
+          <ion-item-sliding>
+
+            <div ion-item (click)="navigationToTicketDetail(schedule.id)">
+              <ion-avatar item-start>
+                <img [src]=userDp>
+              </ion-avatar>
+              <h2>{{schedule.name}}</h2>
+              <p>
+                Request {{schedule.date}}
+              </p>
+              <ion-badge *ngIf="schedule.onSite=='on-site' || schedule.onSite=='OnSite'" item-end>{{schedule.onSite}}</ion-badge>
+            </div>
+          </ion-item-sliding>
+
+        </ion-item-group>
+      </ion-list>
+
+      </ion-card>
+    </div>
+
+    <div col-3>
+      <ion-card>
+        <ion-card-header>
+          <h3 class="app-color">Closed</h3>
+        </ion-card-header>
+
+        <ion-list>
+      <ion-item-group *ngFor="let close of closedData; let i = index">
+
+        <ion-item-sliding>
+
+          <div ion-item (click)="navigationToTicketDetail(close .id)">
+            <ion-avatar item-start>
+              <img [src]=userDp>
+            </ion-avatar>
+            <h2>{{close.name}}</h2>
+            <p>
+              {{close.status}}
+            </p>
+            <ion-badge *ngIf="close.onSite=='on-site' || close.onSite=='OnSite'" item-end>{{close.onSite}}</ion-badge>
+          </div>
+        </ion-item-sliding>
+
+      </ion-item-group>
+
+    </ion-list>
+
+      </ion-card>
+    </div>
+
+  </div>
+
+</ion-content>

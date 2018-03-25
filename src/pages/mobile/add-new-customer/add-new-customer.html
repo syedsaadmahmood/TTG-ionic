@@ -1,0 +1,84 @@
+<!--
+  Generated template for the AddNewCustomerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add New Customer</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list style="padding-top: 16px" class="margin">
+    <ion-list-header class="list-heading row-padding">
+      <strong class="app-color">CONTACT INFO</strong>
+    </ion-list-header>
+    <ion-row class="app-color-secondary border-bottom">
+      <div ion-item class="row-padding">
+        <ion-input placeholder="Name" [(ngModel)]="name" (keyup)="checkDisabling()" class="app-color"></ion-input>
+      </div>
+    </ion-row>
+
+    <ion-row class="app-color-secondary border-bottom">
+      <div ion-item class="row-padding">
+        <ion-input type="number" placeholder="Number" [(ngModel)]="number" (keyup)="checkDisabling()" class="app-color"></ion-input>
+      </div>
+    </ion-row>
+
+    <ion-row class="app-color-secondary border-bottom">
+      <div ion-item class="row-padding">
+        <ion-input type="email" placeholder="email" [(ngModel)]="email" (keyup)="checkDisabling()" class="app-color"></ion-input>
+      </div>
+    </ion-row>
+
+  </ion-list>
+
+  <ion-list style="padding-top: 16px" class="margin">
+    <ion-list-header class="list-heading row-padding">
+      <strong class="app-color">ADDRESS</strong>
+    </ion-list-header>
+    <ion-row class="app-color-secondary border-bottom">
+      <div ion-item class="row-padding">
+        <ion-input placeholder="Street Address" [(ngModel)]="street1" (keyup)="checkDisabling()" class="app-color"></ion-input>
+      </div>
+    </ion-row>
+
+    <ion-row class="app-color-secondary border-bottom">
+      <div ion-item class="row-padding">
+        <ion-input [(ngModel)]="street2" class="app-color"></ion-input>
+      </div>
+    </ion-row>
+
+    <ion-row class="app-color-secondary">
+      <div col-6 style="padding-left: 0">
+        <div ion-item class="row-padding border-bottom app-color-secondary">
+        <ion-input placeholder="City/Town" [(ngModel)]="city" (keyup)="checkDisabling()" class="app-color"></ion-input>
+        </div>
+      </div>
+
+      <div col-6>
+        <div ion-item class="row-padding border-bottom app-color-secondary">
+        <ion-input placeholder="State/Prov" [(ngModel)]="state" (keyup)="checkDisabling()" class="app-color"></ion-input>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="app-color-secondary border-bottom">
+      <div ion-item class="row-padding">
+        <ion-input placeholder="Country" [(ngModel)]="country" (keyup)="checkDisabling()" class="app-color"></ion-input>
+      </div>
+    </ion-row>
+
+  </ion-list>
+
+  <div class="padding button-position" style="bottom: 30px;">
+    <button ion-button full [disabled]="disabling" (click)="addCompany()">ADD NEW CUSTOMER</button>
+  </div>
+
+</ion-content>

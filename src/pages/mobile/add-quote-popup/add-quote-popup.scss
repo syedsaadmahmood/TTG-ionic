@@ -1,0 +1,39 @@
+page-add-quote-popup {
+
+  .atpo-add-quote-popup{
+    float: left;
+    text-align:center;
+    width: 50%;
+    padding: 10px 0;
+    border: 1px solid
+  }
+
+  .atpo-add-quote-popup p{
+    font-size:15px;
+    font-weight:700;
+    margin-bottom: 8px;
+  }
+
+  .centering {
+    text-align: center;
+  }
+
+  .button-position-bottom {
+    position:absolute;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .padding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+}
+
+ion-modal .modal-wrapper page-add-quote-popup{
+  //top: 20%;
+  width:100%;
+  height:370px;
+  position:relative;
+}

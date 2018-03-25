@@ -1,0 +1,31 @@
+<!--
+  Generated template for the DeclineQuotePopupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>DECLINE THIS QUOTE?</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <p style="text-align: center; padding-top: 16px" class="padding">
+    You are about to decline this quote. Are you sure?
+  </p>
+
+  <div class="text-area-div app-color-secondary margin">
+    <ion-textarea class="padding app-color" [(ngModel)]="credentialText" style="height: 100%" placeholder="Why is this quote unsatisfactory?"></ion-textarea>
+  </div>
+
+  <div class="button-position-bottom">
+    <div class="atpo-cancel-ticket-popup app-color-secondary"><p (click)="cancelOption()">CANCEL</p></div>
+    <div class="atpo-cancel-ticket-popup app-color-secondary" style="border-left: 0 "><p (click)="confirmOption()">CONFIRM</p></div>
+  </div>
+
+</ion-content>

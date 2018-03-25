@@ -1,0 +1,24 @@
+page-remove-location-popup {
+  .atpo-remove-location-popup{
+    float: left;
+    text-align:center;
+    width: 50%;
+    padding: 10px 0;
+    border: 1px solid
+  }
+
+  .atpo-remove-location-popup p{
+    font-size:15px;
+    font-weight:700;
+    margin-bottom: 8px;
+  }
+}
+
+ion-modal .modal-wrapper page-remove-location-popup{
+  //top: 20%;
+  width:100%;
+  height:220px;
+  position:relative;
+}
+
+

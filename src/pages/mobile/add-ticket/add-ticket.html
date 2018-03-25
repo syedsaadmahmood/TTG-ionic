@@ -1,0 +1,210 @@
+<!--
+  Generated template for the AddTicketPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New Request</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only><ion-icon name="information-circle"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row no-padding *ngIf="headText==true && persona=='customer'">
+    <ion-col class="top-head">
+      <span>
+        Manual
+      </span>
+      <span class="app-color-secondary">
+        Voice
+      </span>
+      <span class="app-color-secondary">
+        Chat
+      </span>
+    </ion-col>
+  </ion-row>
+
+
+  <p *ngIf="persona=='customer'"><strong>WHERE</strong></p>
+  <!--<div no-border-top>-->
+    <ion-segment [(ngModel)]="addTicketSegment" (ionChange)="tabChangeDetect()">
+      <ion-segment-button value="Remote" activated (click)="checkSelectedtab()">
+        REMOTE
+      </ion-segment-button>
+      <ion-segment-button value="OnSite" (click)="checkSelectedtab()">
+        ON-SITE
+      </ion-segment-button>
+    </ion-segment>
+  <!--</div>-->
+
+  <div [ngSwitch]="addTicketSegment">
+    <div *ngSwitchCase="'Remote'">
+      <p *ngIf="persona=='customer'"><strong>WHAT</strong></p>
+
+      <ion-list>
+        <ion-row class="border-bottom app-color margin-top app-color-secondary" *ngIf="persona == 'tech_owner'" (click)="addCustomer()">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="briefcase" ></ion-icon>
+            <ion-label class="ion-label-overflow app-color-secondary" *ngIf="customerName==''">Add Customer Name</ion-label>
+            <ion-label class="ion-label-overflow" *ngIf="customerName!=''">{{customerName}}</ion-label>
+          </div>
+        </ion-row>
+
+        <ion-row class="border-bottom app-color app-color-secondary" *ngIf="persona == 'tech_owner'" (click)="addTech()">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="person" ></ion-icon>
+            <ion-label class="ion-label-overflow app-color-secondary" *ngIf="techName==''">No One (Open Ticket)</ion-label>
+            <ion-label class="ion-label-overflow" *ngIf="techName!=''">{{techName}}</ion-label>
+          </div>
+        </ion-row>
+
+        <ion-row class="border-bottom app-color-secondary" *ngIf="persona=='tech_owner'">
+          <div ion-item class="row-padding">
+          <ion-icon item-start name="calendar" ></ion-icon>
+          <ion-datetime displayFormat="DDDD, MMM. D   h:mm A" [(ngModel)]="myDate"></ion-datetime>
+          </div>
+        </ion-row>
+
+
+      <div *ngIf="searchItem!=undefined">
+        <ion-row *ngFor="let item of searchItem; let i = index">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="close" class="button-font-size" (click)="crossClicked(i)"></ion-icon>
+            <strong> {{item.name}}</strong>
+          </div>
+        </ion-row>
+      </div>
+
+
+      <button ion-button full (click)="addServiceRemote()" >+ ADD NEW SERVICE</button>
+
+
+        <ion-row class="border-bottom app-color-secondary " *ngIf="persona=='customer'">
+          <div ion-item class="row-padding">
+          <ion-icon item-start name="calendar" ></ion-icon>
+          <ion-datetime displayFormat="DDDD, MMM. D   h:mm A" [(ngModel)]="myDate"></ion-datetime>
+          </div>
+        </ion-row>
+
+        <ion-row class="border-bottom app-color-secondary" *ngIf="persona=='customer'">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="warning" ></ion-icon>
+            <ion-label class="ion-label-overflow" *ngIf="isToggled==true"> Urgent(High Priority)</ion-label>
+            <ion-label class="ion-label-overflow" *ngIf="isToggled==false"> Not Urgent(Low Priority)</ion-label>
+            <ion-toggle color="energized" item-end  [(ngModel)]="isToggled" (ionChange)="NotUrgentRemote()"></ion-toggle>
+          </div>
+        </ion-row>
+        <ion-row class="border-bottom app-color-secondary" *ngIf="persona=='customer'">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="refresh" ></ion-icon>
+            <ion-label class="ion-label-overflow" *ngIf="recurringValue==undefined"> Request Recurring</ion-label>
+            <ion-label class="ion-label-overflow" *ngIf="recurringValue!=undefined">{{recurringValue}}</ion-label>
+            <ion-toggle color="energized" item-end [(ngModel)]="isToggledRecurring" (ionChange)="RequestRecurringRemote()"></ion-toggle>
+          </div>
+        </ion-row>
+      </ion-list>
+      <div position="bottom">
+        <button ion-button full (click)="addcredentialRemote()" [disabled]="addCredentialOnsiteBtn" >NEXT</button>
+      </div>
+
+
+    </div>
+
+    <div *ngSwitchCase="'OnSite'">
+
+    <ion-list>
+      <ion-row class="border-bottom app-color margin-top app-color-secondary" *ngIf="persona == 'tech_owner'" (click)="addCustomer()">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="briefcase" ></ion-icon>
+            <ion-label class="ion-label-overflow app-color-secondary" *ngIf="customerName==''">Add Customer Name</ion-label>
+            <ion-label class="ion-label-overflow" *ngIf="customerName!=''">{{customerName}}</ion-label>
+          </div>
+        </ion-row>
+
+      <ion-row class="border-bottom app-color app-color-secondary" *ngIf="persona == 'tech_owner'" (click)="addTech()">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="pin" ></ion-icon>
+            <ion-label class="ion-label-overflow app-color-secondary" *ngIf="address==''" (click)="addressClicked()">Select Address</ion-label>
+            <ion-label class="ion-label-overflow" *ngIf="address!=''" (click)="addressClicked()">{{address}}</ion-label>
+          </div>
+        </ion-row>
+
+      <ion-row class="border-bottom app-color app-color-secondary margin-top" *ngIf="persona == 'customer'">
+        <div ion-item class="row-padding">
+            <ion-icon item-start name="pin" ></ion-icon>
+            <ion-label class="ion-label-overflow app-color-secondary" *ngIf="address==''" (click)="addressClicked()">Select Address</ion-label>
+            <ion-label class="ion-label-overflow" *ngIf="address!=''" (click)="addressClicked()">{{address}}</ion-label>
+          </div>
+        </ion-row>
+
+      <ion-row class="border-bottom app-color-secondary " *ngIf="persona == 'tech_owner'">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="person" ></ion-icon>
+            <ion-label class="ion-label-overflow app-color-secondary" *ngIf="techName==''">No One (Open Ticket)</ion-label>
+            <ion-label class="ion-label-overflow" *ngIf="techName!=''">{{techName}}</ion-label>
+          </div>
+        </ion-row>
+
+      <ion-row class="border-bottom app-color-secondary" *ngIf="persona == 'tech_owner'">
+          <div ion-item class="row-padding">
+          <ion-icon item-start name="calendar" ></ion-icon>
+          <ion-datetime displayFormat="DDDD, MMM. D   h:mm A" [(ngModel)]="myDate"></ion-datetime>
+          </div>
+        </ion-row>
+
+      <p *ngIf="persona=='customer'"><strong>WHAT</strong></p>
+
+      <div *ngIf="searchItem!=undefined">
+        <ion-row *ngFor="let item of searchItem; let i = index">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="close" class="button-font-size" (click)="crossClicked(i)"></ion-icon>
+            <strong> {{item}}</strong>
+          </div>
+        </ion-row>
+      </div>
+
+      <button ion-button full (click)="addServiceRemote()" >+ ADD NEW SERVICE</button>
+
+
+      <ion-row class="border-bottom app-color-secondary" *ngIf="persona == 'customer'">
+          <div ion-item class="row-padding">
+          <ion-icon item-start name="calendar" ></ion-icon>
+          <ion-datetime displayFormat="DDDD, MMM. D   h:mm A" [(ngModel)]="myDate"></ion-datetime>
+          </div>
+        </ion-row>
+
+        <ion-row class="border-bottom app-color" *ngIf="persona=='customer'">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="warning" ></ion-icon>
+            <ion-label class="ion-label-overflow" *ngIf="isToggled==true"> Urgent(High Priority)</ion-label>
+            <ion-label class="ion-label-overflow" *ngIf="isToggled==false"> Not Urgent(Low Priority)</ion-label>
+            <ion-toggle color="energized" item-end  [(ngModel)]="isToggled" (ionChange)="NotUrgentRemote()"></ion-toggle>
+          </div>
+        </ion-row>
+
+        <ion-row class="border-bottom app-color" *ngIf="persona=='customer'">
+          <div ion-item class="row-padding">
+            <ion-icon item-start name="refresh" ></ion-icon>
+            <ion-label class="ion-label-overflow" *ngIf="recurringValue==undefined"> Request Recurring</ion-label>
+            <ion-label class="ion-label-overflow" *ngIf="recurringValue!=undefined">{{recurringValue}}</ion-label>
+            <ion-toggle color="energized" item-end [(ngModel)]="isToggledRecurring" (ionChange)="RequestRecurringRemote()"></ion-toggle>
+          </div>
+        </ion-row>
+
+    </ion-list>
+
+    <div position="bottom">
+        <button ion-button full (click)="addcredentialRemote()" [disabled]="addCredentialOnsiteBtn">NEXT</button>
+      </div>
+         </div>
+
+  </div>
+
+</ion-content>

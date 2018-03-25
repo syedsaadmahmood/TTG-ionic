@@ -1,0 +1,49 @@
+page-account-details {
+
+  .border-bottom {
+    border-bottom: 1px solid !important;
+  }
+
+  .padding {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .margin {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  .row-padding {
+    padding: 0;
+  }
+
+  .text-input-md {
+    margin: 0;
+  }
+
+  .list-heading {
+    margin-bottom: 0 !important;
+    border-top: 0 !important;
+  }
+
+  .button-position {
+    position:absolute;
+    width: 100%
+  }
+
+  .border-select{
+    border: 1px solid
+  }
+
+  .select .select-icon{
+    position: absolute !important;
+    right: 20px !important;
+}
+
+}
+
+ion-select {
+  max-width: 100% !important;
+}
+

@@ -1,0 +1,52 @@
+page-schedules {
+
+}
+
+h3 {
+  margin: 0 0 10px;
+}
+
+pre {
+  background-color: #f5f5f5;
+  padding: 15px;
+}
+
+.cal-month-view .cal-open-day-events {
+  padding: 0 !important;
+}
+
+.cal-month-view .cal-day-cell {
+    min-height: 0 !important;
+}
+
+.cal-month-view .cal-cell-top {
+    min-height: 20px !important;
+}
+
+.cal-month-view .cal-day-cell.cal-today .cal-day-number {
+    font-size: 1.2em !important;
+}
+
+.cal-week-view .cal-header.cal-today{
+  background-color: $app-color-main !important;
+  color: white !important;
+}
+.cal-week-view .cal-header.cal-today span{
+  color: white !important;
+  opacity: 1;
+}
+
+.cal-month-view .cal-day-cell.cal-today {
+  background-color: $app-color-main !important;
+}
+
+.cal-month-view .cal-day-cell.cal-today span{
+  color: white !important;
+  opacity: 1;
+}
+
+.cal-week-view .cal-day-headers {
+  margin-left: 0;
+  margin-right: 0;
+}
+

@@ -1,0 +1,49 @@
+page-recurring-popup {
+
+  .atpo-recurring-popup {
+    float: left;
+    text-align:center;
+    width: 100%;
+    padding:0;
+    border-top: 1px solid
+}
+
+  .atpo-recurring-popup p {
+    font-size:15px;
+    font-weight:700;
+    margin-bottom: 8px;
+  }
+
+  .primary-recurring-popup {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+  }
+
+  .is-primary-recurring-popup {
+    float: right;
+    font-size: 2.2em;
+  }
+
+  .button-position-bottom {
+    position:absolute;
+    width: 100%;
+    bottom: 16px;
+  }
+
+  .padding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+
+}
+
+ion-modal .modal-wrapper page-recurring-popup{
+  //top: 20%;
+  width:100%;
+  height:360px;
+  position:relative;
+}

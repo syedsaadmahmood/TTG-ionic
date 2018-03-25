@@ -1,0 +1,28 @@
+page-quotes-detail {
+  .padding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .border-bottom {
+    border-bottom: 1px solid;
+  }
+
+  .margin {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .button-position {
+    position:absolute;
+    width: 100%
+  }
+
+  .adjacent-button{
+    float: left;
+    text-align:center;
+    width: 50%;
+  }
+
+
+}

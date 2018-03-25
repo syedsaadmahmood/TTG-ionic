@@ -1,0 +1,36 @@
+page-add-ticket {
+  //.segment-md .segment-button.activated, .segment-md .segment-button.segment-activated,
+  //segment-ios .segment-button.activated, .segment-ios .segment-button.segment-activated {
+  //  border-color: #727272;
+  //  background: #727272;
+  //  color: #ffffff;
+  //}
+
+  .row-padding {
+    padding: 0;
+  }
+
+  .border-bottom {
+    border-bottom: 1px solid
+  }
+
+  .address-label {
+    padding: 5px 0 5px 0;
+    border:0;
+    border-bottom:1px solid;
+    width:100%
+  }
+
+  .margin-top {
+    margin-top: 20px;
+  }
+
+  .ion-label-overflow {
+    overflow: initial;
+  }
+}
+
+  .picker-button .button-inner{
+    color: $app-color-main !important;
+  }
+

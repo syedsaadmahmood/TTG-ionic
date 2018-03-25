@@ -1,0 +1,43 @@
+page-ticket-detail {
+  .row-padding {
+    padding: 0;
+  }
+
+  .top-head span{
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .ticket-detail-head{
+    text-align: center;
+    height: 160px;
+    display: grid;
+    flex-wrap: wrap;
+    width: 100vw;
+    align-items: center;
+    background: #f7f7f7;
+    font-size:20px;
+    font-weight: 600;
+  }
+
+  .cutom-tool{
+    .toolbar-background{
+      background: #ffffff;
+    }
+  }
+
+  .customIcon {
+    font-size: 1.7em;
+  }
+
+  .status-class {
+    padding: 0;
+    border-bottom: 1px solid;
+  }
+
+  .switch-class {
+    border-bottom: 1px solid;
+  }
+
+}

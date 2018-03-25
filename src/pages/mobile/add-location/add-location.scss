@@ -1,0 +1,57 @@
+page-add-location {
+  .avatar {
+    height: 30px!important;
+    width: 30px!important;
+  }
+
+  .text-div {
+    position: absolute;
+    top: 14%;
+    width: 100%;
+    z-index: 9999999999;
+    padding: 15px;
+  }
+
+  .text-class {
+    padding:15px;
+    border:0;
+    border-bottom:1px solid;
+    width:100%;
+  }
+
+  .map-canvas {
+    height: 100%;
+    position: fixed;
+    width: 100%
+  }
+
+  .location-heading {
+    position: absolute;
+    top: 3%;
+    width: 100%;
+    z-index: 9999999999;
+    padding: 15px;
+    color: black
+  }
+
+  .add-location-button-div {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    z-index: 9999999999;
+    padding: 15px;
+  }
+
+  .add-location-button-input {
+    font-size: 16px;
+  }
+
+  #map_canvas {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 150ms ease-in
+  }
+
+}
+

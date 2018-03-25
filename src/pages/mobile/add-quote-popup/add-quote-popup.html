@@ -1,0 +1,45 @@
+<!--
+  Generated template for the AddQuotePopupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title style="padding: 0">SEND THIS QUOTE?</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-row style="padding-top: 16px;" class="padding">
+    <div col-12 class="centering">
+    <h5>You are about to send this quote to:</h5>
+    </div>
+  </ion-row>
+
+  <br>
+
+  <ion-row class="app-color padding" >
+    <div col-12 class="centering">
+      <strong>{{customerName}}</strong>
+      <p>({{email}})</p>
+    </div>
+  </ion-row>
+
+  <ion-row class="padding">
+    <div col-12 class="centering">
+    <h5>Would you like to proceed?</h5>
+    </div>
+  </ion-row>
+
+  <br>
+  <ion-row class="button-position-bottom">
+    <div class="atpo-add-quote-popup app-color-secondary"><p (click)="cancelQuote()">CANCEL</p></div>
+    <div class="atpo-add-quote-popup app-color-secondary" style="border-left: 0 "><p (click)="sendQuote()">SEND</p></div>
+  </ion-row>
+
+</ion-content>

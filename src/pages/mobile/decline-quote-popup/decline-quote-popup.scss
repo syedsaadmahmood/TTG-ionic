@@ -1,0 +1,59 @@
+page-decline-quote-popup {
+
+  .text-area-div {
+    height: 15vh;
+    border: 1px solid;
+  }
+
+  .row-padding {
+    padding: 0;
+  }
+
+  .item-md ion-icon[item-start] + .item-inner, .item-md ion-icon[item-start] + .item-input {
+    margin-left: 0;
+  }
+
+  .atpo-cancel-ticket-popup{
+    float: left;
+    text-align:center;
+    width: 50%;
+    padding: 10px 0;
+    border: 1px solid
+  }
+
+  .atpo-cancel-ticket-popup p{
+    font-size:15px;
+    font-weight:700;
+    margin-bottom: 8px;
+  }
+
+  .button-position-bottom {
+    position:absolute;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .padding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .margin {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .popup-title {
+    padding: 0;
+    text-align: center;
+  }
+
+}
+
+
+ion-modal .modal-wrapper page-decline-quote-popup {
+  //top: 20%;
+  width: 100%;
+  height: 340px;
+  position: relative;
+}
